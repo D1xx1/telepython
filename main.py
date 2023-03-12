@@ -1,10 +1,12 @@
 from telebot import TeleBot
 
-from utils import download_audio
+from utils.audio import download_audio
 
-from cfg.token import token
+from cfg.token import telegram_token
 
-bot = TeleBot(token)
+import utils.yandex
+
+bot = TeleBot(telegram_token)
 
 @bot.message_handler(commands=['start'])
 def start(message):
